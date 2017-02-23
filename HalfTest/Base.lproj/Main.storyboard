@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HalfTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIW-OL-gen">
+                                <rect key="frame" x="149" y="319" width="77" height="30"/>
+                                <state key="normal" title="Open Child"/>
+                                <connections>
+                                    <segue destination="csU-6e-4Pf" kind="presentation" id="Sd5-wo-eVr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tIW-OL-gen" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yi3-Fq-vh6"/>
+                            <constraint firstItem="tIW-OL-gen" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="l4A-gj-rfB"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="137.18140929535232"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="Vzw-Ke-xpf">
+            <objects>
+                <viewController id="csU-6e-4Pf" customClass="SecondViewController" customModule="HalfTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0v7-Gf-Pu9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gul-uo-x0g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Mw-5e-vFN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbC-lH-oa9">
+                                <rect key="frame" x="46" y="50" width="283" height="587"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oZ-CB-D8r">
+                                        <rect key="frame" x="109.5" y="278.5" width="64" height="30"/>
+                                        <state key="normal" title="Close Me"/>
+                                        <connections>
+                                            <action selector="dissmissChild:" destination="csU-6e-4Pf" eventType="touchUpInside" id="d0Q-XL-jYW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.59084221429999995" blue="0.23740506850000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="1oZ-CB-D8r" firstAttribute="centerX" secondItem="jbC-lH-oa9" secondAttribute="centerX" id="azw-s1-w3H"/>
+                                    <constraint firstItem="1oZ-CB-D8r" firstAttribute="centerY" secondItem="jbC-lH-oa9" secondAttribute="centerY" id="eWY-KL-jBc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.72183196760000001" green="1" blue="0.83510873299999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="jbC-lH-oa9" secondAttribute="trailing" constant="30" id="1D8-iD-Jad"/>
+                            <constraint firstItem="Gul-uo-x0g" firstAttribute="top" secondItem="jbC-lH-oa9" secondAttribute="bottom" constant="30" id="HVo-Nx-SWG"/>
+                            <constraint firstItem="jbC-lH-oa9" firstAttribute="top" secondItem="0v7-Gf-Pu9" secondAttribute="bottom" constant="30" id="JLN-UQ-LD4"/>
+                            <constraint firstItem="jbC-lH-oa9" firstAttribute="leading" secondItem="4Mw-5e-vFN" secondAttribute="leadingMargin" constant="30" id="PUq-Mi-8wR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brt-EQ-zl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997.60000000000002" y="147.97601199400302"/>
         </scene>
     </scenes>
 </document>
